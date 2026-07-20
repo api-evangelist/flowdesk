@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.flowdesk.co/getting-started/authentication
+notes: >-
+  Derived from Flowdesk Platform Connect developer documentation and the docs
+  site runtime config (docs.flowdesk.co/config.js), which declares the Auth0
+  tenant, API host, and WebSocket host. No downloadable OpenAPI document is
+  published by the docs site (the reference is rendered client-side in
+  Docusaurus), so scheme details below are captured from the published docs
+  surface rather than derived from a spec file.
+summary:
+  types:
+  - oauth2
+  - http
+  bearer_format: JWT
+  oauth2_flows:
+  - clientCredentials
+  identity_provider: Auth0
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearer_format: JWT
+  description: >-
+    Requests to the Platform Connect REST API (api.flowdesk.co) and WebSocket
+    channel (ws.flowdesk.co) are authorized with a JWT bearer token in the
+    Authorization header.
+  sources:
+  - https://docs.flowdesk.co/getting-started/authentication
+- name: oauth2
+  type: oauth2
+  provider: Auth0
+  auth_domain: login.flowdesk.co
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://login.flowdesk.co/oauth/token
+  description: >-
+    OAuth 2.0 tokens are issued through Flowdesk's Auth0 tenant
+    (login.flowdesk.co). The documentation includes a JWT generation reference
+    (docs.flowdesk.co/reference/jwt-generate) for producing the bearer token
+    presented to the API.
+  sources:
+  - https://docs.flowdesk.co/reference/jwt-generate
+  - https://docs.flowdesk.co/config.js
+hosts:
+  api: https://api.flowdesk.co
+  websocket: wss://ws.flowdesk.co
+  auth: https://login.flowdesk.co
