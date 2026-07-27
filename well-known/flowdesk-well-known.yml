@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of Flowdesk hosts
+host: https://www.flowdesk.co
+notes: >-
+  Probed the standard /.well-known/ discovery surface on the Flowdesk web and
+  API hosts. No documents were served (all 404 / not reachable). Absence is
+  recorded as valid data; no WellKnown pointer is wired because no document was
+  found.
+documents:
+- path: /.well-known/security.txt
+  host: https://www.flowdesk.co
+  status: 404
+- path: /.well-known/openid-configuration
+  host: https://www.flowdesk.co
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  host: https://www.flowdesk.co
+  status: 404
+- path: /.well-known/api-catalog
+  host: https://www.flowdesk.co
+  status: 404
+- path: /.well-known/ai-plugin.json
+  host: https://www.flowdesk.co
+  status: 404

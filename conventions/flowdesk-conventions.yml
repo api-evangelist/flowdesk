@@ -1,0 +1,36 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.flowdesk.co
+notes: >-
+  Cross-cutting request/response semantics for the Flowdesk Platform Connect
+  API, captured from the published developer documentation. Flowdesk does not
+  publish a downloadable OpenAPI document, so this reflects the documented docs
+  surface (getting-started + reference sections) rather than a derived spec.
+api: Flowdesk Platform Connect
+transport:
+  rest:
+    host: https://api.flowdesk.co
+    format: application/json
+  websocket:
+    host: wss://ws.flowdesk.co
+    docs: https://docs.flowdesk.co/reference/ws
+    description: Real-time streaming channel for the Platform Connect API.
+authentication:
+  style: oauth2-jwt-bearer
+  provider: Auth0
+  header: Authorization
+  scheme: Bearer <JWT>
+  docs: https://docs.flowdesk.co/getting-started/authentication
+  see: authentication/flowdesk-authentication.yml
+error_handling:
+  documented: true
+  docs: https://docs.flowdesk.co/getting-started/error-handling
+prerequisites:
+  docs: https://docs.flowdesk.co/getting-started/prerequisites
+idempotency:
+  documented: false
+  notes: No idempotency-key contract is documented on the public docs surface.
+pagination:
+  documented: false
+versioning:
+  documented: false

@@ -1,8 +1,29 @@
 aid: flowdesk
 name: Flowdesk
-description: 'Flowdesk is a company surfaced as a portfolio company of hv-capital, speedinvest and added
-  to the API Evangelist network as a stub for enrichment. Sector: fintech. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Flowdesk is a full-service digital-asset trading and technology firm that
+  delivers liquidity, execution, and market infrastructure to token issuers,
+  exchanges, and institutions. It is a regulated Crypto-Asset Service Provider
+  registered with France's AMF and licensed by Dubai's Virtual Assets Regulatory
+  Authority (VARA). Products span liquidity solutions (token, stablecoin,
+  exchange, and DeFi), OTC trading (spot, derivatives, and credit) across 150+
+  venues and 1,000+ asset pairs, tokenized-market infrastructure, and ventures.
+  Flowdesk exposes a developer-facing "Platform Connect" API for programmatic
+  OTC spot trading over REST with a companion WebSocket streaming channel,
+  authenticated with OAuth 2.0 JWT bearer tokens issued through its Auth0 tenant.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.flowdesk.co/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/flowdesk/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,13 +34,80 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Fintech
-apis: []
+- Crypto
+- Digital Assets
+- Trading
+- Liquidity
+- Market Maker
+- OTC
+- WebSocket
+apis:
+- name: Flowdesk Platform Connect
+  description: >-
+    Flowdesk Platform Connect is the developer API for programmatic OTC spot
+    trading. It offers a REST interface for quoting and trading OTC spot orders
+    and a WebSocket channel for real-time streaming, authenticated with OAuth 2.0
+    JWT bearer tokens issued via Flowdesk's Auth0 tenant (login.flowdesk.co).
+  humanURL: https://docs.flowdesk.co
+  baseURL: https://api.flowdesk.co
+  tags:
+  - Trading
+  - OTC
+  - Spot
+  - WebSocket
+  properties:
+  - type: Documentation
+    url: https://docs.flowdesk.co
+  - type: APIReference
+    url: https://docs.flowdesk.co/reference/otc-spot
+  - type: GettingStarted
+    url: https://docs.flowdesk.co/getting-started/intro
+  - type: Authentication
+    url: https://docs.flowdesk.co/getting-started/authentication
+  - type: WebSocket
+    url: https://docs.flowdesk.co/reference/ws
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/flowdesk-domain-security.yml
+- type: Website
+  url: https://www.flowdesk.co
+- type: DeveloperPortal
+  url: https://docs.flowdesk.co
+- type: Documentation
+  url: https://docs.flowdesk.co
+- type: APIReference
+  url: https://docs.flowdesk.co/reference/otc-spot
+- type: GettingStarted
+  url: https://docs.flowdesk.co/getting-started/intro
+- type: Authentication
+  url: authentication/flowdesk-authentication.yml
+- type: Conventions
+  url: conventions/flowdesk-conventions.yml
+- type: Blog
+  url: https://www.flowdesk.co/insights
+- type: Support
+  url: https://www.flowdesk.co/contact-us
+- type: TermsOfService
+  url: https://www.flowdesk.co/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.flowdesk.co/legal/privacy-notice
+- type: TrustCenter
+  url: security/flowdesk-trust-center.yml
+- type: Compliance
+  url: https://trust.flowdesk.co
+- type: LLMsTxt
+  url: llms/flowdesk-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
